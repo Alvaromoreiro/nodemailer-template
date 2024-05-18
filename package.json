@@ -1,0 +1,29 @@
+{
+  "name": "nodemailer-template",
+  "version": "1.0.0",
+  "description": "This is a Nodemailer template to create an email endpoint easily.",
+  "main": "stc/index.js",
+  "scripts": {
+    "dev": "tsc && node dist/index.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodemailer"
+  ],
+  "author": "amoreiro",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
+    "nodemailer": "^6.9.13",
+    "uuid": "9.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "4.17.21",
+    "@types/nodemailer": "^6.4.15",
+    "@types/uuid": "9.0.7",
+    "typescript": "5.3.2"
+  }
+}
