@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
 import { corsMiddleware } from './middlewares/corsMiddleware';
-import { EMAIL, EMAIL_ENDPOINT } from './constants/constants';
+import { EMAIL, EMAIL_ENDPOINT } from './config';
 import { RequestInterface } from './interfaces/server';
 
 const app = express();
