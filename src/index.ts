@@ -1,8 +1,11 @@
 import express, { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
 import { corsMiddleware } from './middlewares/corsMiddleware';
-import { EMAIL, EMAIL_ENDPOINT } from './config';
+import { EMAIL_ENDPOINT } from './constants/constants';
 import { RequestInterface } from './interfaces/server';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 
@@ -11,7 +14,6 @@ app.use(corsMiddleware());
 app.disable('x-powered-by');
 
 app.use(express.json());
-
 
 app.post(EMAIL_ENDPOINT, async (req: Request<RequestInterface>, res: Response) => {
     const { to, subject, text } = req.body;
@@ -22,18 +24,18 @@ app.post(EMAIL_ENDPOINT, async (req: Request<RequestInterface>, res: Response) =
 
     try {
         const transporter = nodemailer.createTransport({
-            service: EMAIL.SERVICE,
-            port: EMAIL.PORT,
+            service: process.env.EMAIL_SERVICE,
+            port: Number(process.env.EMAIL_PORT),
             secure: false,
-            host: EMAIL.HOST,
+            host: process.env.EMAIL_HOST,
             auth: {
-                user: EMAIL.USER,
-                pass: EMAIL.PASSWORD
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASSWORD
             },
         });
 
         const mailOptions = {
-            from: EMAIL.USER,
+            from: process.env.EMAIL_USER,
             to,
             subject,
             text
