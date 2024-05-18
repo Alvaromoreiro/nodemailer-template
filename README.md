@@ -1,3 +1,6 @@
+
+![85d18137-2e3b-43cb-89d3-674553bf2c35](https://github.com/Alvaromoreiro/nodemailer-template/assets/57747327/f3060b71-d370-479c-a66a-0b600ecc6aed)
+
 # Nodemailer Template
 This repository contains a template for using Nodemailer, a module for Node.js applications that allows you to send emails easily.
 
